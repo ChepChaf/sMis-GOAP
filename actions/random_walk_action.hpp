@@ -6,6 +6,8 @@
 
 #include "../commons/world.hpp"
 
+#include "../actors/actor.hpp"
+#include "../actors/movable_actor.hpp"
 
 #include "actor_action.hpp"
 

@@ -12,7 +12,7 @@ class Actor
         Actor(int posX, int posY) : posX(posX), posY(posY) {}
 
     public:
+        Actor() : Actor(0, 0) {}
         Vector2 GetPosVector2();
-        void MoveX(int movX);
-        void MoveY(int movY);
+        virtual ~Actor() {}
 };

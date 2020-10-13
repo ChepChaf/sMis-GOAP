@@ -10,6 +10,14 @@ RandomWalkAction::RandomWalkAction()
 
 void RandomWalkAction::Do(Actor &actor)
 {
+    MovableActor *movableActor = dynamic_cast<MovableActor*>(&actor);
+
+    if (!movableActor)
+    {
+        std::cout << "ERROR: Actor can't be casted to MovableActor." << std::endl;
+        return;
+    }
+
     if (mIsCompleted)
         return;
 
@@ -23,7 +31,7 @@ void RandomWalkAction::Do(Actor &actor)
     {
         Vector2 normalizedDirection = Vector2Normalize(direction);
 
-        actor.MoveX(round(normalizedDirection.x));
-        actor.MoveY(round(normalizedDirection.y));
+        movableActor->MoveX(round(normalizedDirection.x));
+        movableActor->MoveY(round(normalizedDirection.y));
     }
 }

@@ -3,10 +3,10 @@
 
 #include <raylib.h>
 
-#include "actor.hpp"
+#include "movable_actor.hpp"
 #include "../actions/actions.hpp"
 
-class SMis : public Actor
+class SMis : public MovableActor
 {
     static const int height = 10;
     static const int width = 10;
@@ -14,7 +14,7 @@ class SMis : public Actor
     ActorAction *currentAction {nullptr};
 
     public:
-        SMis(int posX, int posY) : Actor(posX, posY) {}
+        SMis(int posX, int posY) : MovableActor(posX, posY) {}
         void draw();
         void decideNextAction();
         void act();
