@@ -8,4 +8,5 @@ class ActorAction
         bool mIsCompleted { false };
     public:
         virtual void Do(Actor &actor) = 0;
+        bool isCompleted();
 };

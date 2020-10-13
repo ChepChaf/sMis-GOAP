@@ -4,20 +4,18 @@
 #include <raymath.h>
 #include <cmath>
 
-#include "../commons/world.hpp"
-
 #include "../actors/actor.hpp"
 #include "../actors/movable_actor.hpp"
 
 #include "actor_action.hpp"
-#include "move_to.hpp"
 
-class RandomWalkAction : public ActorAction
+class MoveTo : public ActorAction
 {
     Vector2 mDestination;
-    MoveTo *moveToAction;
 
     public:
-        RandomWalkAction();
+        MoveTo() : ActorAction() {}
+        MoveTo(Vector2 destination) : mDestination(destination) {}
+        
         void Do(Actor &actor) override; // Inherited from ActorAction
 };
